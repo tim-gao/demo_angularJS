@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./angular-1.5.6/angular.js"></script>
+</head>
+<body>
+	<!--<p>尝试修改以下表单。</p>
+
+ 	<div ng-app="myapp" ng-controller="myCtrl" ng-init="quantity=1;cost=5">
+
+	名: <input type="text" ng-model="firstName"><br>
+	姓: <input type="text" ng-model="lastName"><br>
+	<br>
+	姓名: {{firstName + " " + lastName}}
+	<p>总价: {{ quantity * cost }}</p>
+	<p>总价： <span ng-bind="quantity * cost"></span></p>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('myapp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+		});
+
+	</script> -->
+	<!-- <div ng-app="" ng-init="names=[
+	{name:'Jani',country:'Norway'},
+	{name:'Hege',country:'Sweden'},
+	{name:'Kai',country:'Denmark'}]">
+
+	<p>循环对象：</p>
+	<ul>
+	  <li ng-repeat="x in names">
+	    {{ x.name + ', ' + x.country }}
+	  </li>
+	</ul>
+
+	</div>  -->
+	<!--  <div ng-app="myApp" ng-controller="myCtrl">
+	    名字: <input ng-model="name">
+	    <p>你输入了:{{ name }}</p>
+	</div>
+
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+	    $scope.name = "John Doe";
+	});
+	</script> -->
+	<!-- <form ng-app="" name="myForm">
+	    Email:
+	    <input type="email" name="myAddress" ng-model="text">
+	    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+	</form>
+
+	<p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p> -->
+
+<!-- 	<form ng-app="" name="myForm" ng-init="myText = 'test@runoob.com'">
+
+	Email:
+	<input type="email" name="myAddress" ng-model="myText" required>
+	<p>编辑邮箱地址，查看状态的改变。</p>
+	<h1>状态</h1>
+	<p>Valid: {{myForm.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
+	<p>Dirty: {{myForm.myAddress.$dirty}} (如果值改变则为 true)。</p>
+	<p>Touched: {{myForm.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+
+	</form> -->
+	<!-- <div ng-app="myApp" ng-controller="personalCtrl">
+		<button ng-click="toggle()">隐藏/显示</button>
+		<p ng-hide="myVar">
+			名：<input type="text" name="" ng-model="firstName"><br>
+			姓名：<input type="text" name="" ng-model="lastName"><br>
+			Full name: {{firstName + " " + lastName}}
+		</p>
+	</div>
+	
+		<script type="text/javascript">
+			angular.module('myApp',[]).controller('personalCtrl',function($scope){
+				$scope.firstName = "John";
+				$scope.lastName = "Doe";
+				$scope.myVar = false;
+				$scope.toggle = function(){
+					$scope.myVar = !$scope.myVar;
+				}
+			});
+		</script> -->
+		<form ng-app="myApp" ng-controller="validateCtrl" name="myform" novalidate>
+			<p>用户名：<br>
+			<input type="text" name="user" ng-model="user" required="">
+			<span style="color:red" ng-show="myform.user.$dirty && myform.user.$invalid">
+				<span ng-show="myform.user.$error.required">用户名是必须的</span>
+			</span>
+			
+			</p>
+			<p>邮箱:<br>
+			<input type="text" name="email" ng-model="email" required="">
+			<span style="color:red" ng-show="myform.email.$dirty && myform.email.$invalid">
+				<span ng-show="myform.email.$error.required">邮箱是必须的</span>
+				<span ng-show="myform.email.$error.email">非法的邮箱</span>
+			</span>
+			</p>
+			<p>
+				<input type="submit" name="" ng-disabled="myform.user.$dirty && myform.user.$invalid || myform.email.$dirty && myform.email.$invalid">
+			</p>
+		</form>
+		<script>
+		var app = angular.module('myApp', []);
+		app.controller('validateCtrl', function($scope) {
+		    $scope.user = 'John Doe';
+		    $scope.email = 'john.doe@gmail.com';
+		});
+		</script>
+</body>
+</html>
